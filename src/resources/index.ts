@@ -30,7 +30,7 @@ export {
   type IPRecordUpdateParams,
   type IPRecordListParams,
 } from './ip-records';
-export { Settings, type DialingPermissions, type SettingUpdateParams } from './settings';
+export { Settings, type VoiceDialingPermissions, type SettingUpdateParams } from './settings';
 export {
   SourceIPMappings,
   type SourceIPMapping,

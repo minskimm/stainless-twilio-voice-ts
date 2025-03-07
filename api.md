@@ -77,12 +77,12 @@ Methods:
 
 Types:
 
-- <code><a href="./src/resources/settings.ts">VoiceDialingPermissions</a></code>
+- <code><a href="./src/resources/settings.ts">DialingPermissions</a></code>
 
 Methods:
 
-- <code title="get /v1/Settings">client.settings.<a href="./src/resources/settings.ts">retrieve</a>() -> VoiceDialingPermissions</code>
-- <code title="post /v1/Settings">client.settings.<a href="./src/resources/settings.ts">update</a>({ ...params }) -> VoiceDialingPermissions</code>
+- <code title="get /v1/Settings">client.settings.<a href="./src/resources/settings.ts">retrieve</a>() -> DialingPermissions</code>
+- <code title="post /v1/Settings">client.settings.<a href="./src/resources/settings.ts">update</a>({ ...params }) -> DialingPermissions</code>
 
 # IPRecords
 

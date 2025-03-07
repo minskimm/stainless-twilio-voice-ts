@@ -35,7 +35,7 @@ import {
   IPRecordUpdateParams,
   IPRecords,
 } from './resources/ip-records';
-import { SettingUpdateParams, Settings, VoiceDialingPermissions } from './resources/settings';
+import { DialingPermissions, SettingUpdateParams, Settings } from './resources/settings';
 import {
   SourceIPMapping,
   SourceIPMappingCreateParams,
@@ -59,7 +59,7 @@ import {
 import {
   DialingPermissionCreateBulkCountryUpdatesParams,
   DialingPermissionCreateBulkCountryUpdatesResponse,
-  DialingPermissions,
+  DialingPermissions as DialingPermissionsAPIDialingPermissions,
 } from './resources/dialing-permissions/dialing-permissions';
 
 const safeJSON = (text: string) => {
@@ -791,7 +791,7 @@ export class TwilioVoiceOpenAPI {
 TwilioVoiceOpenAPI.Archives = Archives;
 TwilioVoiceOpenAPI.ByocTrunks = ByocTrunks;
 TwilioVoiceOpenAPI.ConnectionPolicies = ConnectionPolicies;
-TwilioVoiceOpenAPI.DialingPermissions = DialingPermissions;
+TwilioVoiceOpenAPI.DialingPermissions = DialingPermissionsAPIDialingPermissions;
 TwilioVoiceOpenAPI.Settings = Settings;
 TwilioVoiceOpenAPI.IPRecords = IPRecords;
 TwilioVoiceOpenAPI.SourceIPMappings = SourceIPMappings;
@@ -819,14 +819,14 @@ export declare namespace TwilioVoiceOpenAPI {
   };
 
   export {
-    DialingPermissions as DialingPermissions,
+    DialingPermissionsAPIDialingPermissions as DialingPermissions,
     type DialingPermissionCreateBulkCountryUpdatesResponse as DialingPermissionCreateBulkCountryUpdatesResponse,
     type DialingPermissionCreateBulkCountryUpdatesParams as DialingPermissionCreateBulkCountryUpdatesParams,
   };
 
   export {
     Settings as Settings,
-    type VoiceDialingPermissions as VoiceDialingPermissions,
+    type DialingPermissions as DialingPermissions,
     type SettingUpdateParams as SettingUpdateParams,
   };
 

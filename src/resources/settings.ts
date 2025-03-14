@@ -9,7 +9,7 @@ export class Settings extends APIResource {
   /**
    * Retrieve voice dialing permissions inheritance for the sub-account
    */
-  retrieve(options?: RequestOptions): APIPromise<DialingPermissions> {
+  retrieve(options?: RequestOptions): APIPromise<VoiceDialingPermissions> {
     return this._client.get('/v1/Settings', options);
   }
 
@@ -19,7 +19,7 @@ export class Settings extends APIResource {
   update(
     body: SettingUpdateParams | null | undefined = {},
     options?: RequestOptions,
-  ): APIPromise<DialingPermissions> {
+  ): APIPromise<VoiceDialingPermissions> {
     return this._client.post('/v1/Settings', {
       body,
       ...options,
@@ -28,7 +28,7 @@ export class Settings extends APIResource {
   }
 }
 
-export interface DialingPermissions {
+export interface VoiceDialingPermissions {
   /**
    * `true` if the sub-account will inherit voice dialing permissions from the Master
    * Project; otherwise `false`.
@@ -50,5 +50,8 @@ export interface SettingUpdateParams {
 }
 
 export declare namespace Settings {
-  export { type DialingPermissions as DialingPermissions, type SettingUpdateParams as SettingUpdateParams };
+  export {
+    type VoiceDialingPermissions as VoiceDialingPermissions,
+    type SettingUpdateParams as SettingUpdateParams,
+  };
 }

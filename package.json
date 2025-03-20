@@ -1,5 +1,5 @@
 {
-  "name": "twilio-voice-openapi",
+  "name": "stainless-twilio-voice",
   "version": "0.0.1-alpha.0",
   "description": "The official TypeScript library for the Twilio Voice OpenAPI API",
   "author": "Twilio Voice OpenAPI <support@twilio.com>",
@@ -50,8 +50,8 @@
     "synckit": "0.8.8"
   },
   "imports": {
-    "twilio-voice-openapi": ".",
-    "twilio-voice-openapi/*": "./src/*"
+    "stainless-twilio-voice": ".",
+    "stainless-twilio-voice/*": "./src/*"
   },
   "exports": {
     ".": {

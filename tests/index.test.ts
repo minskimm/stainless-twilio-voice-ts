@@ -1,10 +1,10 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import { APIPromise } from 'twilio-voice-openapi/api-promise';
+import { APIPromise } from 'stainless-twilio-voice/api-promise';
 
 import util from 'node:util';
-import TwilioVoiceOpenAPI from 'twilio-voice-openapi';
-import { APIUserAbortError } from 'twilio-voice-openapi';
+import TwilioVoiceOpenAPI from 'stainless-twilio-voice';
+import { APIUserAbortError } from 'stainless-twilio-voice';
 const defaultFetch = fetch;
 
 describe('instantiate client', () => {

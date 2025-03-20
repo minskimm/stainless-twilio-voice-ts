@@ -1,4 +1,4 @@
-import { createPathTagFunction, encodeURIPath } from 'twilio-voice-openapi/internal/utils/path';
+import { createPathTagFunction, encodeURIPath } from 'stainless-twilio-voice/internal/utils/path';
 import { inspect } from 'node:util';
 
 describe('path template tag function', () => {

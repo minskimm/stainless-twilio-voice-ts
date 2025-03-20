@@ -7,8 +7,8 @@ const config: JestConfigWithTsJest = {
     '^.+\\.(t|j)sx?$': ['@swc/jest', { sourceMaps: 'inline' }],
   },
   moduleNameMapper: {
-    '^twilio-voice-openapi$': '<rootDir>/src/index.ts',
-    '^twilio-voice-openapi/(.*)$': '<rootDir>/src/$1',
+    '^stainless-twilio-voice$': '<rootDir>/src/index.ts',
+    '^stainless-twilio-voice/(.*)$': '<rootDir>/src/$1',
   },
   modulePathIgnorePatterns: [
     '<rootDir>/ecosystem-tests/',

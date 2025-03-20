@@ -5,8 +5,8 @@
   "compilerOptions": {
     "rootDir": "./dist/src",
     "paths": {
-      "twilio-voice-openapi/*": ["dist/src/*"],
-      "twilio-voice-openapi": ["dist/src/index.ts"],
+      "stainless-twilio-voice/*": ["dist/src/*"],
+      "stainless-twilio-voice": ["dist/src/index.ts"],
     },
     "noEmit": false,
     "declaration": true,

@@ -1,6 +1,6 @@
 import fs from 'fs';
-import type { ResponseLike } from 'twilio-voice-openapi/internal/to-file';
-import { toFile } from 'twilio-voice-openapi/uploads';
+import type { ResponseLike } from 'stainless-twilio-voice/internal/to-file';
+import { toFile } from 'stainless-twilio-voice/uploads';
 import { File } from 'node:buffer';
 
 class MyClass {
@@ -97,7 +97,7 @@ describe('missing File error message', () => {
   });
 
   test('is thrown', async () => {
-    const uploads = await import('twilio-voice-openapi/uploads');
+    const uploads = await import('stainless-twilio-voice/uploads');
     await expect(
       uploads.toFile(mockResponse({ url: 'https://example.com/my/audio.mp3' })),
     ).rejects.toMatchInlineSnapshot(

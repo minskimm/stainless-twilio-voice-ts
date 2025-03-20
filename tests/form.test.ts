@@ -1,5 +1,5 @@
-import { multipartFormRequestOptions, createForm } from 'twilio-voice-openapi/internal/uploads';
-import { toFile } from 'twilio-voice-openapi/uploads';
+import { multipartFormRequestOptions, createForm } from 'stainless-twilio-voice/internal/uploads';
+import { toFile } from 'stainless-twilio-voice/uploads';
 
 describe('form data validation', () => {
   test('valid values do not error', async () => {

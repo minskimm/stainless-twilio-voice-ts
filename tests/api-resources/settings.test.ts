@@ -1,6 +1,6 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import TwilioVoiceOpenAPI from 'twilio-voice-openapi';
+import TwilioVoiceOpenAPI from 'stainless-twilio-voice';
 
 const client = new TwilioVoiceOpenAPI({
   username: 'My Username',

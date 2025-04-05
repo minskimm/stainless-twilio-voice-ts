@@ -9,8 +9,8 @@ It is generated with [Stainless](https://www.stainless.com/).
 You can run the MCP Server directly via `npx`:
 
 ```sh
-export TWILIO_VOICE_OPENAPI_USERNAME = "My Username"
-export TWILIO_VOICE_OPENAPI_PASSWORD = "My Password"
+export TWILIO_VOICE_OPENAPI_USERNAME="My Username"
+export TWILIO_VOICE_OPENAPI_PASSWORD="My Password"
 npx -y stainless-twilio-voice-mcp
 ```
 

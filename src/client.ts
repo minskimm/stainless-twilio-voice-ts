@@ -227,7 +227,7 @@ export class TwilioVoiceOpenAPI {
     return;
   }
 
-  protected authHeaders(opts: FinalRequestOptions): Headers | undefined {
+  protected authHeaders(opts: FinalRequestOptions): NullableHeaders | undefined {
     if (!this.username) {
       return undefined;
     }
@@ -238,7 +238,7 @@ export class TwilioVoiceOpenAPI {
 
     const credentials = `${this.username}:${this.password}`;
     const Authorization = `Basic ${toBase64(credentials)}`;
-    return new Headers({ Authorization });
+    return buildHeaders([{ Authorization }]);
   }
 
   /**

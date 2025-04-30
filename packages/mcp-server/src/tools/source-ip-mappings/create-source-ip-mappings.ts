@@ -29,8 +29,8 @@ export const tool: Tool = {
   },
 };
 
-export const handler = (client: TwilioVoiceOpenAPI, args: any) => {
-  const { ...body } = args;
+export const handler = (client: TwilioVoiceOpenAPI, args: Record<string, unknown> | undefined) => {
+  const body = args as any;
   return client.sourceIPMappings.create(body);
 };
 

@@ -47,8 +47,8 @@ export const tool: Tool = {
   },
 };
 
-export const handler = (client: TwilioVoiceOpenAPI, args: any) => {
-  const { ConnectionPolicySid, ...body } = args;
+export const handler = (client: TwilioVoiceOpenAPI, args: Record<string, unknown> | undefined) => {
+  const { ConnectionPolicySid, ...body } = args as any;
   return client.connectionPolicies.targets.create(ConnectionPolicySid, body);
 };
 

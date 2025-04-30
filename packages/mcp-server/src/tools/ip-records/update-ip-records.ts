@@ -28,8 +28,8 @@ export const tool: Tool = {
   },
 };
 
-export const handler = (client: TwilioVoiceOpenAPI, args: any) => {
-  const { Sid, ...body } = args;
+export const handler = (client: TwilioVoiceOpenAPI, args: Record<string, unknown> | undefined) => {
+  const { Sid, ...body } = args as any;
   return client.ipRecords.update(Sid, body);
 };
 

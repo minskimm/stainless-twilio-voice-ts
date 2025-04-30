@@ -23,8 +23,8 @@ export const tool: Tool = {
   },
 };
 
-export const handler = (client: TwilioVoiceOpenAPI, args: any) => {
-  const { IsoCode } = args;
+export const handler = (client: TwilioVoiceOpenAPI, args: Record<string, unknown> | undefined) => {
+  const { IsoCode, ...body } = args as any;
   return client.dialingPermissions.countries.retrieve(IsoCode);
 };
 

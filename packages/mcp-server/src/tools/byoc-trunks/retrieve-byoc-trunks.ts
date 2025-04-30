@@ -23,8 +23,8 @@ export const tool: Tool = {
   },
 };
 
-export const handler = (client: TwilioVoiceOpenAPI, args: any) => {
-  const { Sid } = args;
+export const handler = (client: TwilioVoiceOpenAPI, args: Record<string, unknown> | undefined) => {
+  const { Sid, ...body } = args as any;
   return client.byocTrunks.retrieve(Sid);
 };
 

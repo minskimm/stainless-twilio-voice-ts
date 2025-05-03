@@ -6,7 +6,7 @@
     "rootDir": "./dist/src",
     "paths": {
       "stainless-twilio-voice/*": ["dist/src/*"],
-      "stainless-twilio-voice": ["dist/src/index.ts"],
+      "stainless-twilio-voice": ["dist/src/index.ts"]
     },
     "noEmit": false,
     "declaration": true,

@@ -21,6 +21,15 @@ export class DialingPermissions extends APIResource {
    * Create a bulk update request to change voice dialing country permissions of one
    * or more countries identified by the corresponding
    * [ISO country code](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2)
+   *
+   * @example
+   * ```ts
+   * const response =
+   *   await client.dialingPermissions.createBulkCountryUpdates({
+   *     UpdateRequest:
+   *       '[ { "iso_code": "GB", "low_risk_numbers": "Enabled", "high_risk_special_numbers":"Enabled", "high_risk_irsf_numbers": "Enabled" } ]',
+   *   });
+   * ```
    */
   createBulkCountryUpdates(
     body: DialingPermissionCreateBulkCountryUpdatesParams,

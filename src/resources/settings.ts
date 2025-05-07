@@ -8,6 +8,12 @@ import { RequestOptions } from '../internal/request-options';
 export class Settings extends APIResource {
   /**
    * Retrieve voice dialing permissions inheritance for the sub-account
+   *
+   * @example
+   * ```ts
+   * const voiceDialingPermissions =
+   *   await client.settings.retrieve();
+   * ```
    */
   retrieve(options?: RequestOptions): APIPromise<VoiceDialingPermissions> {
     return this._client.get('/v1/Settings', options);
@@ -15,6 +21,14 @@ export class Settings extends APIResource {
 
   /**
    * Update voice dialing permissions inheritance for the sub-account
+   *
+   * @example
+   * ```ts
+   * const voiceDialingPermissions =
+   *   await client.settings.update({
+   *     DialingPermissionsInheritance: true,
+   *   });
+   * ```
    */
   update(
     body: SettingUpdateParams | null | undefined = {},

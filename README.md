@@ -28,7 +28,7 @@ const client = new TwilioVoiceOpenAPI({
 });
 
 async function main() {
-  await client.archives.deleteCall('REPLACE_ME', { Date: 'REPLACE_ME' });
+  await client.archives.deleteCall('CAE1CB97d8EBbDbaAae6d9B1ca0D1cFaAD', { Date: '2019-12-27' });
 }
 
 main();
@@ -48,8 +48,8 @@ const client = new TwilioVoiceOpenAPI({
 });
 
 async function main() {
-  const params: TwilioVoiceOpenAPI.ArchiveDeleteCallParams = { Date: 'REPLACE_ME' };
-  await client.archives.deleteCall('REPLACE_ME', params);
+  const params: TwilioVoiceOpenAPI.ArchiveDeleteCallParams = { Date: '2019-12-27' };
+  await client.archives.deleteCall('CAE1CB97d8EBbDbaAae6d9B1ca0D1cFaAD', params);
 }
 
 main();
@@ -67,7 +67,7 @@ a subclass of `APIError` will be thrown:
 ```ts
 async function main() {
   const response = await client.archives
-    .deleteCall('REPLACE_ME', { Date: 'REPLACE_ME' })
+    .deleteCall('CAE1CB97d8EBbDbaAae6d9B1ca0D1cFaAD', { Date: '2019-12-27' })
     .catch(async (err) => {
       if (err instanceof TwilioVoiceOpenAPI.APIError) {
         console.log(err.status); // 400
@@ -111,7 +111,7 @@ const client = new TwilioVoiceOpenAPI({
 });
 
 // Or, configure per-request:
-await client.archives.deleteCall('REPLACE_ME', { Date: 'REPLACE_ME' }, {
+await client.archives.deleteCall('CAE1CB97d8EBbDbaAae6d9B1ca0D1cFaAD', { Date: '2019-12-27' }, {
   maxRetries: 5,
 });
 ```
@@ -128,7 +128,7 @@ const client = new TwilioVoiceOpenAPI({
 });
 
 // Override per-request:
-await client.archives.deleteCall('REPLACE_ME', { Date: 'REPLACE_ME' }, {
+await client.archives.deleteCall('CAE1CB97d8EBbDbaAae6d9B1ca0D1cFaAD', { Date: '2019-12-27' }, {
   timeout: 5 * 1000,
 });
 ```
@@ -151,12 +151,14 @@ Unlike `.asResponse()` this method consumes the body, returning once it is parse
 ```ts
 const client = new TwilioVoiceOpenAPI();
 
-const response = await client.archives.deleteCall('REPLACE_ME', { Date: 'REPLACE_ME' }).asResponse();
+const response = await client.archives
+  .deleteCall('CAE1CB97d8EBbDbaAae6d9B1ca0D1cFaAD', { Date: '2019-12-27' })
+  .asResponse();
 console.log(response.headers.get('X-My-Header'));
 console.log(response.statusText); // access the underlying Response object
 
 const { data: result, response: raw } = await client.archives
-  .deleteCall('REPLACE_ME', { Date: 'REPLACE_ME' })
+  .deleteCall('CAE1CB97d8EBbDbaAae6d9B1ca0D1cFaAD', { Date: '2019-12-27' })
   .withResponse();
 console.log(raw.headers.get('X-My-Header'));
 console.log(result);

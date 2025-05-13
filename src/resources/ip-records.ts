@@ -1,12 +1,22 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import { APIResource } from '../resource';
-import { APIPromise } from '../api-promise';
+import { APIResource } from '../core/resource';
+import { APIPromise } from '../core/api-promise';
 import { buildHeaders } from '../internal/headers';
 import { RequestOptions } from '../internal/request-options';
 import { path } from '../internal/utils/path';
 
 export class IPRecords extends APIResource {
+  /**
+   * @example
+   * ```ts
+   * const ipRecord = await client.ipRecords.create({
+   *   IpAddress: '10.2.3.4',
+   *   CidrPrefixLength: 30,
+   *   FriendlyName: 'friendly_name',
+   * });
+   * ```
+   */
   create(body: IPRecordCreateParams, options?: RequestOptions): APIPromise<IPRecord> {
     return this._client.post('/v1/IpRecords', {
       body,
@@ -15,10 +25,27 @@ export class IPRecords extends APIResource {
     });
   }
 
+  /**
+   * @example
+   * ```ts
+   * const ipRecord = await client.ipRecords.retrieve(
+   *   'ILE1CB97d8EBbDbaAae6d9B1ca0D1cFaAD',
+   * );
+   * ```
+   */
   retrieve(sid: string, options?: RequestOptions): APIPromise<IPRecord> {
     return this._client.get(path`/v1/IpRecords/${sid}`, options);
   }
 
+  /**
+   * @example
+   * ```ts
+   * const ipRecord = await client.ipRecords.update(
+   *   'ILE1CB97d8EBbDbaAae6d9B1ca0D1cFaAD',
+   *   { FriendlyName: 'update_name' },
+   * );
+   * ```
+   */
   update(
     sid: string,
     body: IPRecordUpdateParams | null | undefined = {},
@@ -31,6 +58,12 @@ export class IPRecords extends APIResource {
     });
   }
 
+  /**
+   * @example
+   * ```ts
+   * const ipRecords = await client.ipRecords.list();
+   * ```
+   */
   list(
     query: IPRecordListParams | null | undefined = {},
     options?: RequestOptions,
@@ -38,6 +71,14 @@ export class IPRecords extends APIResource {
     return this._client.get('/v1/IpRecords', { query, ...options });
   }
 
+  /**
+   * @example
+   * ```ts
+   * await client.ipRecords.delete(
+   *   'ILE1CB97d8EBbDbaAae6d9B1ca0D1cFaAD',
+   * );
+   * ```
+   */
   delete(sid: string, options?: RequestOptions): APIPromise<void> {
     return this._client.delete(path`/v1/IpRecords/${sid}`, {
       ...options,

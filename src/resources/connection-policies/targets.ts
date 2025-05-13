@@ -1,12 +1,28 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import { APIResource } from '../../resource';
-import { APIPromise } from '../../api-promise';
+import { APIResource } from '../../core/resource';
+import { APIPromise } from '../../core/api-promise';
 import { buildHeaders } from '../../internal/headers';
 import { RequestOptions } from '../../internal/request-options';
 import { path } from '../../internal/utils/path';
 
 export class Targets extends APIResource {
+  /**
+   * @example
+   * ```ts
+   * const connectionPolicyTarget =
+   *   await client.connectionPolicies.targets.create(
+   *     'NYE1CB97d8EBbDbaAae6d9B1ca0D1cFaAD',
+   *     {
+   *       Target: 'sip:sip-box.com:1234',
+   *       Enabled: true,
+   *       FriendlyName: 'friendly_name',
+   *       Priority: 1,
+   *       Weight: 20,
+   *     },
+   *   );
+   * ```
+   */
   create(
     connectionPolicySid: string,
     body: TargetCreateParams,
@@ -19,6 +35,19 @@ export class Targets extends APIResource {
     });
   }
 
+  /**
+   * @example
+   * ```ts
+   * const connectionPolicyTarget =
+   *   await client.connectionPolicies.targets.retrieve(
+   *     'NEE1CB97d8EBbDbaAae6d9B1ca0D1cFaAD',
+   *     {
+   *       ConnectionPolicySid:
+   *         'NYE1CB97d8EBbDbaAae6d9B1ca0D1cFaAD',
+   *     },
+   *   );
+   * ```
+   */
   retrieve(
     sid: string,
     params: TargetRetrieveParams,
@@ -28,6 +57,23 @@ export class Targets extends APIResource {
     return this._client.get(path`/v1/ConnectionPolicies/${ConnectionPolicySid}/Targets/${sid}`, options);
   }
 
+  /**
+   * @example
+   * ```ts
+   * const connectionPolicyTarget =
+   *   await client.connectionPolicies.targets.update(
+   *     'NEE1CB97d8EBbDbaAae6d9B1ca0D1cFaAD',
+   *     {
+   *       ConnectionPolicySid:
+   *         'NYE1CB97d8EBbDbaAae6d9B1ca0D1cFaAD',
+   *       FriendlyName: 'updated_name',
+   *       Priority: 2,
+   *       Target: 'sip:sip-updated.com:4321',
+   *       Weight: 10,
+   *     },
+   *   );
+   * ```
+   */
   update(
     sid: string,
     params: TargetUpdateParams,
@@ -41,6 +87,15 @@ export class Targets extends APIResource {
     });
   }
 
+  /**
+   * @example
+   * ```ts
+   * const targets =
+   *   await client.connectionPolicies.targets.list(
+   *     'NYE1CB97d8EBbDbaAae6d9B1ca0D1cFaAD',
+   *   );
+   * ```
+   */
   list(
     connectionPolicySid: string,
     query: TargetListParams | null | undefined = {},
@@ -52,6 +107,18 @@ export class Targets extends APIResource {
     });
   }
 
+  /**
+   * @example
+   * ```ts
+   * await client.connectionPolicies.targets.delete(
+   *   'NEE1CB97d8EBbDbaAae6d9B1ca0D1cFaAD',
+   *   {
+   *     ConnectionPolicySid:
+   *       'NYE1CB97d8EBbDbaAae6d9B1ca0D1cFaAD',
+   *   },
+   * );
+   * ```
+   */
   delete(sid: string, params: TargetDeleteParams, options?: RequestOptions): APIPromise<void> {
     const { ConnectionPolicySid } = params;
     return this._client.delete(path`/v1/ConnectionPolicies/${ConnectionPolicySid}/Targets/${sid}`, {

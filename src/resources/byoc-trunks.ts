@@ -1,12 +1,30 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import { APIResource } from '../resource';
-import { APIPromise } from '../api-promise';
+import { APIResource } from '../core/resource';
+import { APIPromise } from '../core/api-promise';
 import { buildHeaders } from '../internal/headers';
 import { RequestOptions } from '../internal/request-options';
 import { path } from '../internal/utils/path';
 
 export class ByocTrunks extends APIResource {
+  /**
+   * @example
+   * ```ts
+   * const byocTrunk = await client.byocTrunks.create({
+   *   ConnectionPolicySid: 'NYaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
+   *   FriendlyName: 'friendly_name',
+   *   FromDomainSid: 'SDaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
+   *   StatusCallbackMethod: 'POST',
+   *   StatusCallbackUrl:
+   *     'https://byoc.example.com/twilio/status_callback',
+   *   VoiceFallbackMethod: 'POST',
+   *   VoiceFallbackUrl:
+   *     'https://byoc.example.com/twilio/fallback',
+   *   VoiceMethod: 'POST',
+   *   VoiceUrl: 'https://byoc.example.com/twilio/app',
+   * });
+   * ```
+   */
   create(
     body: ByocTrunkCreateParams | null | undefined = {},
     options?: RequestOptions,
@@ -18,10 +36,41 @@ export class ByocTrunks extends APIResource {
     });
   }
 
+  /**
+   * @example
+   * ```ts
+   * const byocTrunk = await client.byocTrunks.retrieve(
+   *   'BYE1CB97d8EBbDbaAae6d9B1ca0D1cFaAD',
+   * );
+   * ```
+   */
   retrieve(sid: string, options?: RequestOptions): APIPromise<ByocTrunk> {
     return this._client.get(path`/v1/ByocTrunks/${sid}`, options);
   }
 
+  /**
+   * @example
+   * ```ts
+   * const byocTrunk = await client.byocTrunks.update(
+   *   'BYE1CB97d8EBbDbaAae6d9B1ca0D1cFaAD',
+   *   {
+   *     CnamLookupEnabled: true,
+   *     ConnectionPolicySid:
+   *       'NYaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaab',
+   *     FriendlyName: 'update_name',
+   *     FromDomainSid: 'SDaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaab',
+   *     StatusCallbackMethod: 'GET',
+   *     StatusCallbackUrl:
+   *       'https://byoc.example.com/twilio_updated/status_callback',
+   *     VoiceFallbackMethod: 'GET',
+   *     VoiceFallbackUrl:
+   *       'https://byoc.example.com/twilio_updated/fallback',
+   *     VoiceMethod: 'GET',
+   *     VoiceUrl: 'https://byoc.example.com/twilio_updated/app',
+   *   },
+   * );
+   * ```
+   */
   update(
     sid: string,
     body: ByocTrunkUpdateParams | null | undefined = {},
@@ -34,6 +83,12 @@ export class ByocTrunks extends APIResource {
     });
   }
 
+  /**
+   * @example
+   * ```ts
+   * const byocTrunks = await client.byocTrunks.list();
+   * ```
+   */
   list(
     query: ByocTrunkListParams | null | undefined = {},
     options?: RequestOptions,
@@ -41,6 +96,14 @@ export class ByocTrunks extends APIResource {
     return this._client.get('/v1/ByocTrunks', { query, ...options });
   }
 
+  /**
+   * @example
+   * ```ts
+   * await client.byocTrunks.delete(
+   *   'BYE1CB97d8EBbDbaAae6d9B1ca0D1cFaAD',
+   * );
+   * ```
+   */
   delete(sid: string, options?: RequestOptions): APIPromise<void> {
     return this._client.delete(path`/v1/ByocTrunks/${sid}`, {
       ...options,

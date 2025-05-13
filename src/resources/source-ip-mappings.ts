@@ -1,12 +1,22 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import { APIResource } from '../resource';
-import { APIPromise } from '../api-promise';
+import { APIResource } from '../core/resource';
+import { APIPromise } from '../core/api-promise';
 import { buildHeaders } from '../internal/headers';
 import { RequestOptions } from '../internal/request-options';
 import { path } from '../internal/utils/path';
 
 export class SourceIPMappings extends APIResource {
+  /**
+   * @example
+   * ```ts
+   * const sourceIPMapping =
+   *   await client.sourceIPMappings.create({
+   *     IpRecordSid: 'ILaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
+   *     SipDomainSid: 'SDaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
+   *   });
+   * ```
+   */
   create(body: SourceIPMappingCreateParams, options?: RequestOptions): APIPromise<SourceIPMapping> {
     return this._client.post('/v1/SourceIpMappings', {
       body,
@@ -15,10 +25,29 @@ export class SourceIPMappings extends APIResource {
     });
   }
 
+  /**
+   * @example
+   * ```ts
+   * const sourceIPMapping =
+   *   await client.sourceIPMappings.retrieve(
+   *     'IBE1CB97d8EBbDbaAae6d9B1ca0D1cFaAD',
+   *   );
+   * ```
+   */
   retrieve(sid: string, options?: RequestOptions): APIPromise<SourceIPMapping> {
     return this._client.get(path`/v1/SourceIpMappings/${sid}`, options);
   }
 
+  /**
+   * @example
+   * ```ts
+   * const sourceIPMapping =
+   *   await client.sourceIPMappings.update(
+   *     'IBE1CB97d8EBbDbaAae6d9B1ca0D1cFaAD',
+   *     { SipDomainSid: 'SDaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaab' },
+   *   );
+   * ```
+   */
   update(
     sid: string,
     body: SourceIPMappingUpdateParams,
@@ -31,6 +60,13 @@ export class SourceIPMappings extends APIResource {
     });
   }
 
+  /**
+   * @example
+   * ```ts
+   * const sourceIPMappings =
+   *   await client.sourceIPMappings.list();
+   * ```
+   */
   list(
     query: SourceIPMappingListParams | null | undefined = {},
     options?: RequestOptions,
@@ -38,6 +74,14 @@ export class SourceIPMappings extends APIResource {
     return this._client.get('/v1/SourceIpMappings', { query, ...options });
   }
 
+  /**
+   * @example
+   * ```ts
+   * await client.sourceIPMappings.delete(
+   *   'IBE1CB97d8EBbDbaAae6d9B1ca0D1cFaAD',
+   * );
+   * ```
+   */
   delete(sid: string, options?: RequestOptions): APIPromise<void> {
     return this._client.delete(path`/v1/SourceIpMappings/${sid}`, {
       ...options,

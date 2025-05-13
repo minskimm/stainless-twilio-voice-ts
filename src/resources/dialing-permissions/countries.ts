@@ -1,7 +1,7 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import { APIResource } from '../../resource';
-import { APIPromise } from '../../api-promise';
+import { APIResource } from '../../core/resource';
+import { APIPromise } from '../../core/api-promise';
 import { RequestOptions } from '../../internal/request-options';
 import { path } from '../../internal/utils/path';
 
@@ -9,6 +9,14 @@ export class Countries extends APIResource {
   /**
    * Retrieve voice dialing country permissions identified by the given ISO country
    * code
+   *
+   * @example
+   * ```ts
+   * const country =
+   *   await client.dialingPermissions.countries.retrieve(
+   *     'IsoCode',
+   *   );
+   * ```
    */
   retrieve(isoCode: string, options?: RequestOptions): APIPromise<CountryRetrieveResponse> {
     return this._client.get(path`/v1/DialingPermissions/Countries/${isoCode}`, options);
@@ -16,6 +24,12 @@ export class Countries extends APIResource {
 
   /**
    * Retrieve all voice dialing country permissions for this account
+   *
+   * @example
+   * ```ts
+   * const countries =
+   *   await client.dialingPermissions.countries.list();
+   * ```
    */
   list(
     query: CountryListParams | null | undefined = {},
@@ -28,6 +42,14 @@ export class Countries extends APIResource {
    * Fetch the high-risk special services prefixes from the country resource
    * corresponding to the
    * [ISO country code](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2)
+   *
+   * @example
+   * ```ts
+   * const response =
+   *   await client.dialingPermissions.countries.fetchHighRiskSpecialPrefixes(
+   *     'IsoCode',
+   *   );
+   * ```
    */
   fetchHighRiskSpecialPrefixes(
     isoCode: string,

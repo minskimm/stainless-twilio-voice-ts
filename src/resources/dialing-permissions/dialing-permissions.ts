@@ -1,6 +1,6 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import { APIResource } from '../../resource';
+import { APIResource } from '../../core/resource';
 import * as CountriesAPI from './countries';
 import {
   Countries,
@@ -10,7 +10,7 @@ import {
   CountryListResponse,
   CountryRetrieveResponse,
 } from './countries';
-import { APIPromise } from '../../api-promise';
+import { APIPromise } from '../../core/api-promise';
 import { buildHeaders } from '../../internal/headers';
 import { RequestOptions } from '../../internal/request-options';
 
@@ -21,6 +21,15 @@ export class DialingPermissions extends APIResource {
    * Create a bulk update request to change voice dialing country permissions of one
    * or more countries identified by the corresponding
    * [ISO country code](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2)
+   *
+   * @example
+   * ```ts
+   * const response =
+   *   await client.dialingPermissions.createBulkCountryUpdates({
+   *     UpdateRequest:
+   *       '[ { "iso_code": "GB", "low_risk_numbers": "Enabled", "high_risk_special_numbers":"Enabled", "high_risk_irsf_numbers": "Enabled" } ]',
+   *   });
+   * ```
    */
   createBulkCountryUpdates(
     body: DialingPermissionCreateBulkCountryUpdatesParams,

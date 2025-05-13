@@ -1,6 +1,6 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import { APIResource } from '../../resource';
+import { APIResource } from '../../core/resource';
 import * as TargetsAPI from './targets';
 import {
   ConnectionPolicyTarget,
@@ -12,7 +12,7 @@ import {
   TargetUpdateParams,
   Targets,
 } from './targets';
-import { APIPromise } from '../../api-promise';
+import { APIPromise } from '../../core/api-promise';
 import { buildHeaders } from '../../internal/headers';
 import { RequestOptions } from '../../internal/request-options';
 import { path } from '../../internal/utils/path';
@@ -20,6 +20,15 @@ import { path } from '../../internal/utils/path';
 export class ConnectionPolicies extends APIResource {
   targets: TargetsAPI.Targets = new TargetsAPI.Targets(this._client);
 
+  /**
+   * @example
+   * ```ts
+   * const connectionPolicy =
+   *   await client.connectionPolicies.create({
+   *     FriendlyName: 'friendly_name',
+   *   });
+   * ```
+   */
   create(
     body: ConnectionPolicyCreateParams | null | undefined = {},
     options?: RequestOptions,
@@ -31,10 +40,29 @@ export class ConnectionPolicies extends APIResource {
     });
   }
 
+  /**
+   * @example
+   * ```ts
+   * const connectionPolicy =
+   *   await client.connectionPolicies.retrieve(
+   *     'NYE1CB97d8EBbDbaAae6d9B1ca0D1cFaAD',
+   *   );
+   * ```
+   */
   retrieve(sid: string, options?: RequestOptions): APIPromise<ConnectionPolicy> {
     return this._client.get(path`/v1/ConnectionPolicies/${sid}`, options);
   }
 
+  /**
+   * @example
+   * ```ts
+   * const connectionPolicy =
+   *   await client.connectionPolicies.update(
+   *     'NYE1CB97d8EBbDbaAae6d9B1ca0D1cFaAD',
+   *     { FriendlyName: 'updated_name' },
+   *   );
+   * ```
+   */
   update(
     sid: string,
     body: ConnectionPolicyUpdateParams | null | undefined = {},
@@ -47,6 +75,13 @@ export class ConnectionPolicies extends APIResource {
     });
   }
 
+  /**
+   * @example
+   * ```ts
+   * const connectionPolicies =
+   *   await client.connectionPolicies.list();
+   * ```
+   */
   list(
     query: ConnectionPolicyListParams | null | undefined = {},
     options?: RequestOptions,
@@ -54,6 +89,14 @@ export class ConnectionPolicies extends APIResource {
     return this._client.get('/v1/ConnectionPolicies', { query, ...options });
   }
 
+  /**
+   * @example
+   * ```ts
+   * await client.connectionPolicies.delete(
+   *   'NYE1CB97d8EBbDbaAae6d9B1ca0D1cFaAD',
+   * );
+   * ```
+   */
   delete(sid: string, options?: RequestOptions): APIPromise<void> {
     return this._client.delete(path`/v1/ConnectionPolicies/${sid}`, {
       ...options,
